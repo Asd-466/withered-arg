@@ -1,0 +1,18 @@
+download video:
+yt-dlp "url"
+
+get thumbnail of a video:
+yt-dlp --write-thumbnail --skip-download "https://www.youtube.com/watch?v=VIDEO_ID"
+
+get frames of a video
+ffmpeg -i input.mp4 frame_%04d.png
+
+/\
+|
+then do stuff to the frames, brighten and stuff
+
+make audio file from video:
+ffmpeg -i input.mp4 -vn -c:a mp3 output.mp3
+
+make spectrogram:
+ffmpeg -i output.mp3 -lavfi showspectrumpic=s=1280x720:color=rainbow spectrogram.png
